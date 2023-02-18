@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="47-chat-solid.gif" type="image/gif" />
+  <head>
+    <title>GossipGazette</title>
+  </head>
+  <body>
+    <h1 class="typing-animation">GossipGazette</h1>
+    <form>
+      <label for="message">Write a message to the world:</label>
+      <br>
+      <textarea id="message" name="message" placeholder="Type Here..." style="resize: none;"></textarea>
+      <br>
+      <input type="file" id="file" accept="video/*,image/*">
+      <br>
+      <button id="button" type="button" onclick="postMessage()">Post</button>
+      <script>
+        var input = document.getElementById("message");
+        input.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("button").click();
+          input.value="";
+        }
+        });
+      </script>
+    </form>
+    <div id="messages"></div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+  <script src="app.js"></script>
+</html>

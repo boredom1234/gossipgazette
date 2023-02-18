@@ -1,0 +1,129 @@
+/* Body */
+body {
+    background-color: #222;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    }
+    
+    /* Header */
+    h1 {
+    margin: 20px;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    }
+    
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden; 
+        border-right: .1em solid #fff;
+        white-space: nowrap; 
+        letter-spacing: .15em;
+        animation: typing 3s steps(20, end), blink-caret .5s step-end;
+        color: #fff;
+        font-size: 3em;
+        font-family: Arial, sans-serif;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 29% }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #fff }
+      }
+      
+      
+    /* Form */
+    form {
+    margin: 20px;
+    }
+    
+    label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    }
+    
+    textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    border: none;
+    color: #eee;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    }
+    
+    input[type="file"] {
+    margin-bottom: 10px;
+    }
+    
+    button {
+    background-color: #3AC162;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+    background-color: #5AE390;
+    }
+    
+    p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    }
+    
+    /* Messages */
+    #messages {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    padding: 20px;
+    }
+    
+    .message {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    }
+    
+    .message img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+    }
+    
+    .messageDiv {
+    border-bottom: 1px solid #5AE390;
+    }
