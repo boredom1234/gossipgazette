@@ -35,7 +35,29 @@ Setting up the project is easy:
 https://github.com/boredom1234/gossipgazette.git
 ```
 
-### 2. Enjoy!
+### 2. Set rules for firebase:
+#️⃣ `For RealTime DB`
+```bash
+{
+  "rules": {
+    "messages": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
+```
+#️⃣ `For Storage`
+```bash
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write;
+    }
+  }
+}
+```
+
     
 ## Authors
 
