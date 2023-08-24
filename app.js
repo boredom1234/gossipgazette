@@ -133,3 +133,40 @@ function deleteMessages() {
       });
   }
 }
+
+// Function to display the login modal
+function displayLoginModal() {
+  var loginModal = document.getElementById("loginModal");
+  loginModal.style.display = "block";
+}
+
+// Function to authenticate the user
+function authenticate() {
+  var userID = document.getElementById("userID").value;
+  var password = document.getElementById("password").value;
+
+  // Check credentials (replace with your authentication logic)
+  if (userID === "admin" && password === "admin") {
+    // Authentication successful, hide the login modal
+    var loginModal = document.getElementById("loginModal");
+    loginModal.style.display = "none";
+
+    // Enable access to other website features (chat, etc.)
+    enableWebsiteFeatures();
+
+    return false; // Prevent form submission
+  } else {
+    // Authentication failed, show an error message (customize as needed)
+    alert("Authentication failed. Please check your User ID and Password.");
+    return false; // Prevent form submission
+  }
+}
+
+// Function to enable website features after successful login
+function enableWebsiteFeatures() {
+  // Enable chat, buttons, or other features here
+}
+// Trigger the display of the login modal when the page loads
+window.onload = function () {
+  displayLoginModal();
+};

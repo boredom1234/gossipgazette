@@ -13,6 +13,27 @@
   </head>
 
   <body>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return authenticate()">
+          <div class="form-group">
+            <input type="text" id="userID" class="form-control" placeholder="userID" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="password"
+              required
+            />
+          </div>
+          <button id="login_butt" type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
     <div class="container">
       <h1 class="typing-animation">Bro-Rizz</h1>
       <form>
