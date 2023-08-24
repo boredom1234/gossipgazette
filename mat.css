@@ -1,0 +1,22 @@
+/* matrix-background.css */
+
+/* Create a matrix rain animation */
+@keyframes matrix-rain {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+  
+  /* Apply the animation to the body */
+  body {
+    background-color: #000;
+    animation: matrix-rain 10s linear infinite;
+    background-image: 
+      linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  

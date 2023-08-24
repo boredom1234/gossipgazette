@@ -1,13 +1,13 @@
 // Initialize Firebase
 var firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID",
-};
+    apiKey: "AIzaSyBV4xc_EmC5aAP3gPJlaHXlD5htR-4F7gs",
+    authDomain: "buzz-buzz-buzz-e386c.firebaseapp.com",
+    databaseURL: "https://buzz-buzz-buzz-e386c-default-rtdb.firebaseio.com/",
+    projectId: "buzz-buzz-buzz-e386c",
+    storageBucket: "gs://buzz-buzz-buzz-e386c.appspot.com",
+    messagingSenderId: "926878856746",
+    appId: "1:926878856746:web:15301db66e5b3e2602b553",
+  };
   firebase.initializeApp(firebaseConfig);
   
   // Reference to Firebase database and storage
@@ -20,7 +20,7 @@ var firebaseConfig = {
     var file = document.getElementById("file").files[0];
 
       // Check file size
-    if (file && file.size > 20 * 1024 * 1024) {
+    if (file && file.size > 100 * 1024 * 1024) {
         alert("File size exceeds 20 MB limit.");
         return;
     }
@@ -103,3 +103,33 @@ database.ref('messages').on('value', function(snapshot) {
 
     }
 });
+
+// Function to prompt for password and delete messages if the password is correct
+function promptPassword() {
+  var password = prompt("Enter the password to delete all chats:");
+
+  // Check if the password matches a predefined password (you can replace this with your actual password)
+  if (password === "BKL") {
+    deleteMessages();
+  } else {
+    alert("Incorrect password. Chats were not deleted.");
+  }
+}
+
+// Function to delete all messages from Firebase
+function deleteMessages() {
+  if (confirm("Are you sure you want to delete all chats? This action cannot be undone.")) {
+    // Reference to the 'messages' node in the Firebase database
+    var messagesRef = firebase.database().ref('messages');
+
+    // Remove all messages
+    messagesRef.remove()
+      .then(function() {
+        alert("All chats have been deleted successfully.");
+      })
+      .catch(function(error) {
+        console.error("Error deleting chats: ", error);
+        alert("An error occurred while deleting chats. Please try again.");
+      });
+  }
+}

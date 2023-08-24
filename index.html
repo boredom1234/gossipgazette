@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="47-chat-solid.gif" type="image/gif" />
   <head>
-    <title>GossipGazette</title>
+    <title><?></title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mat.css" />
+    <link rel="icon" href="./fav.png" />
   </head>
+
   <body>
-    <h1 class="typing-animation">GossipGazette</h1>
-    <form>
-      <label for="message">Write a message to the world:</label>
-      <br>
-      <textarea id="message" name="message" placeholder="Type Here..." style="resize: none;"></textarea>
-      <br>
-      <input type="file" id="file" accept="video/*,image/*">
-      <br>
-      <button id="button" type="button" onclick="postMessage()">Post</button>
-      <script>
-        var input = document.getElementById("message");
-        input.addEventListener("keypress", function(event) {
+    <div class="container">
+      <h1 class="typing-animation">Bro-Rizz</h1>
+      <form>
+        <div class="form-group">
+          <textarea
+            id="message"
+            name="message"
+            class="form-control"
+            placeholder="Type Here..."
+            style="resize: none"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            id="file"
+            accept="video/*,image/*"
+            class="form-control-file"
+          />
+        </div>
+        <button
+          id="button"
+          type="button"
+          class="btn btn-primary"
+          onclick="postMessage()"
+        >
+          Post
+        </button>
+        <button
+          id="deleteButton"
+          type="button"
+          class="btn btn-danger"
+          onclick="promptPassword()"
+        >
+          Delete All Chats
+        </button>
+      </form>
+      <div id="messages"></div>
+    </div>
+
+    <!-- Include Bootstrap JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      var input = document.getElementById("message");
+      input.addEventListener("keypress", function (event) {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
           event.preventDefault();
           document.getElementById("button").click();
-          input.value="";
+          input.value = "";
         }
-        });
-      </script>
-    </form>
-    <div id="messages"></div>
+      });
+    </script>
   </body>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
